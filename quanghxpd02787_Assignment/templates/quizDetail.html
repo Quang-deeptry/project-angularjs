@@ -1,0 +1,30 @@
+<div class="list-group" style="margin-top: 30px">
+    <a class="list-group-item active" ng-controller="quizCtrl">Bài kiểm tra môn: {{ name }}</a>
+    <div class="form-quiz">
+        <div class="form-group">
+            <label for=""><b>Câu hỏi {{questions}}</b></label>
+        </div>
+        <div ng-repeat="option in options">
+            <div class="form-group">
+                <label class="radio-inline"><input type="radio" value="{{option.Id}}" ng-model="option.active" ng-change="change(option,active)" name="answer">{{option.Text}}</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success" ng-click="prevQuestion()">Quay lai</button>
+            <button class="btn btn-info" ng-click="nextQuestion()">Tiếp tục</button>
+            <button class="btn btn-primary">Điểm: {{score}}/10</button>
+            <button class="btn btn-danger" ng-show="quizOver" ng-click="endQuiz()">Kết thúc</button>
+            <button class="btn btn-danger" ng-show="again" ng-click="quizAgain()">Làm lại</button>
+            <div style="margin-top: 10px" ng-repeat="alert in messager">
+                <div class="alert alert-{{ alert.alert }}">{{alert.totalScore}}</div>
+            </div>
+        </div>
+    </div>      
+</div>
+<style>
+    .form-quiz{
+        padding: 10px;
+        border: 1px solid #ddd;
+        background: #f9f9f9;
+    }
+</style>

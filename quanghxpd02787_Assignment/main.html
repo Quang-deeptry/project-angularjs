@@ -1,0 +1,8 @@
+<div ng-repeat="item_book in list" class="col-md-3" style="padding: 5px; height: 360px; margin-bottom: 15px;">
+  <div style="border: 1px solid #ddd; padding: 10px;" class="item">
+    <img src="images/logos/{{ item_book.Logo }}" title="LOGO" width="100%" />
+    <p style="border-top: 1px solid #ddd;"><b>ID môn học: </b>{{item_book.Id}}</p>
+    <p><b>Môn: </b> {{item_book.Name}}</p>
+    <a href="#!/quiz/{{item_book.Id}}/{{item_book.Name}}">{{item_book.Name}}</a>
+  </div>
+</div>

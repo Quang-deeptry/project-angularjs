@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <style>
+    #dialog {
+      top: 30%;
+      right: 47%;
+      position: absolute;
+    }
+  </style>
+  <body ng-app="myApp" ng-controller="subject">
+    <div id="dialog"></div>
+    <div class="main">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+              data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/!">HALO ACADEMY</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#/!">Trang chủ</a></li>
+              <li><a href="#!/introduct">Giới thiệu</a></li>
+              <li><a href="#!/feedback">Góp ý</a></li>
+              <li><a href="#!/contact">Liên hệ</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="#"><span class="glyphicon glyphicon-log-in"></span>
+                  Đăng nhập</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid" style="margin-top: 50px;">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="list-group">
+              <a class="list-group-item active"><label for="">Danh mục</label>
+                <input class="form-control" type="text" ng-model="sub"
+                  placeholder="Tìm kiếm môn học"
+                  /></a>
+              <p class="list-group-item" ng-repeat="sub in list | filter: sub">
+                <a href="#!/quiz/{{sub.Id}}/{{sub.Name}}" class="nav-link">{{sub.Name
+                  }}</a>
+              </p>
+            </div>
+            <!-- <img src="images/poster.jpg" alt="" width="100%" style="margin-bottom: 10px;"> -->
+            <img src="images/poster1.jpg" alt="" width="100%"
+              style="margin-bottom: 10px;" />
+            <!-- <img src="images/poster2.jpg" alt="" width="100%" style="margin-bottom: 10px;"> -->
+            <img src="images/poster3.jpg" alt="" width="100%"
+              style="margin-bottom: 10px;" />
+          </div>
+          <div class="col-sm-8 text-left">
+            <h1>Chào mừng bạn đến với Halo Academy</h1>
+            <p>
+              Ở đây bạn có thể tìm kiếm được các câu hỏi liên quan tới môn học
+              khoa công nghệ công tin. Bổ sung kiến
+              thức cho chuyên nghành của mình nhé!
+            </p>
+            <p>
+              Bên trái là phần danh mục các môn học, bạn có thể bấm vào để tham
+              gia trả lời các câu khỏi trắc nghiệm
+              liên quan tới môn học của mình. Đánh giá kết quả làm được sau khi
+              hoàn thành các câu hỏi trăc nghiệm
+            </p>
+            <hr />
+            <h3>Nội dung</h3>
+            <div ng-view></div>
+          </div>
+          <div class="col-sm-2">
+            <img src="images/poster.jpg" alt="" width="100%"
+              style="margin-bottom: 10px;" />
+            <img src="images/poster1.jpg" alt="" width="100%"
+              style="margin-bottom: 10px;" />
+            <img src="images/poster2.jpg" alt="" width="100%"
+              style="margin-bottom: 10px;" />
+            <img src="images/poster3.jpg" alt="" width="100%"
+              style="margin-bottom: 10px;" />
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="row">
+          <div class="col-md-3">
+            <img src="images/logos/VBPR.png" alt="" width="20%" />
+            <h1>HALO ACADEMY</h1>
+          </div>
+          <div class="col-md-2 list-group">
+            <ul>
+              <p>Hoàng Quang</p>
+              <p>PD02787</p>
+              <p>WEB14306</p>
+              <p>Framework</p>
+            </ul>
+          </div>
+          <div class="col-md-2 list-group">
+            <ul>
+              <p>Ngôn ngữ</p>
+              <p>Bootstrap 3, 4</p>
+              <p>Angularjs</p>
+              <p>Javascript</p>
+            </ul>
+          </div>
+          <div class="col-md-2 list-group">
+            <ul>
+              <p>PHP Laravel</p>
+              <p>HTML</p>
+              <p>CSS</p>
+              <p>Java</p>
+            </ul>
+          </div>
+          <div class="col-md-3 list-group">
+            <ul>
+              <p>Tìm kiếm công việc</p>
+              <p>
+                <input type="text" placeholder="Tìm kiếm" class="form-control"
+                  />
+              </p>
+              <p>Email: quangdeeptry7@gmail.com</p>
+              <p>Facebook: fb.com/blocksekhoc</p>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/subject.js"></script>
+  </body>
+</html>

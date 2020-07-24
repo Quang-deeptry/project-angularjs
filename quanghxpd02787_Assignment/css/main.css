@@ -1,0 +1,60 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;    
+  }
+  .navbar-inverse{
+    background-color: #34302c;
+    border: none;   
+}
+a{
+  color: #372214;
+}
+a:hover{
+  text-decoration: none;
+  color: #b8733a;
+}
+.navbar-inverse .navbar-brand{
+    color: #999999;
+    font-weight: bold;
+}
+.navbar-inverse .navbar-nav>li>a{
+    color: #999999;
+    font-weight: bold;
+}
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover{
+  background-color: #34302c;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    background-color: #372214;
+}
+  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+  .row.content {height: 450px}
+  
+  /* Set gray background color and 100% height */
+  .sidenav {
+    padding-top: 20px;
+    background-color: #999999;
+    height: 100%;
+  }
+  
+  /* Set black background color, white text and some padding */
+  footer {
+    background-color: #794228;
+    color: white;
+    padding: 15px;
+  }
+  
+  /* On small screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+  }
+.navbar-brand{
+    line-height: 50px;
+}
+.navbar-nav>li>a{
+    line-height: 50px;
+}
